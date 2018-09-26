@@ -9,4 +9,4 @@ docker run -d \
 	-v $(pwd)/vol_lms_log:/var/log/squeezeboxserver \
 	-v $(pwd)/vol_lms_media:/media \
 	--name="lms" \
-	lms-rpi	:local
+	lms-rpi:local

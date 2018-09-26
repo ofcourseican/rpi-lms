@@ -5,7 +5,6 @@ MAINTAINER Kai Timmer, https://github.com/ofcourseican
 RUN apt-get update && \
 	apt-get -y install perl adduser iproute iputils-ping curl wget faad flac lame sox libio-socket-ssl-perl
 
-RUN useradd -s /bin/bash lms
 
 ENV SQUEEZE_VOL_PERSIST /var/lib/squeezeboxserver
 ENV SQUEEZE_VOL_LOG /var/log/squeezeboxserver
@@ -25,6 +24,6 @@ EXPOSE 3483 3483/udp 9000 9090
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 
-USER lms
+USER squeezeboxserver 
 ENTRYPOINT ["/entrypoint.sh"]
 
